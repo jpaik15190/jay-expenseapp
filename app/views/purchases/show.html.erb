@@ -12,9 +12,9 @@
 
 <p>
   <b>User:</b>
-  <%= @purchase.user %>
+  <%= link_to @purchase.user.name, @purchase.user %>
 </p>
 
 
-<%= link_to 'Edit', edit_purchase_path(@purchase) %> |
-<%= link_to 'Back', purchases_path %>
+<%= link_to 'Edit', edit_purchase_path(@purchase), class: 'nice small radius white button' %>
+<%= link_to 'Back', purchases_path, class: 'nice small radius white button' %>

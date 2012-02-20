@@ -1,4 +1,4 @@
-<%= form_for(@user) do |f| %>
+<%= form_for(@user, html: {class: 'nice'}) do |f| %>
   <% if @user.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
@@ -12,18 +12,22 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
+    <%= f.label :name %><p>
+    <%= f.text_field :name, placeholder: 'Enter user\'s name', class: 'input-text' %></p>
   </div>
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.text_field :email %>
+    <%= f.label :email %><p>
+    <%= f.text_field :email, placeholder: 'User\'s email address', class: 'input-text' %></p>
   </div>
   <div class="field">
-    <%= f.label :household %><br />
-    <%= f.text_field :household %>
+    <%= f.label :household %><p>
+    <%= f.collection_select(:household_id, Household.all, :id, :address, 
+    	{:prompt => true}, 
+    	{"style" => "width:200px"})%></p>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="actions"><p>
+    <%= f.submit class: 'nice medium radius blue button'%></p>
   </div>
 <% end %>
+
+

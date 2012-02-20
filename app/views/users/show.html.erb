@@ -12,9 +12,9 @@
 
 <p>
   <b>Household:</b>
-  <%= @user.household %>
+  <%= link_to @user.household.address, @user.household %>
 </p>
 
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<%= link_to 'Edit', edit_user_path(@user), class: 'nice small radius white button' %>
+<%= link_to 'Back', users_path, class: 'nice small radius white button' %>

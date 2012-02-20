@@ -1,4 +1,4 @@
-<%= form_for(@household) do |f| %>
+<%= form_for(@household, html: {class: 'nice'}) do |f| %>
   <% if @household.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@household.errors.count, "error") %> prohibited this household from being saved:</h2>
@@ -12,10 +12,10 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :address %><br />
-    <%= f.text_field :address %>
+    <%= f.label :address %><p>
+    <%= f.text_field :address, placeholder: 'Input address', class: 'input-text' %></p>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="actions"><p>
+    <%= f.submit class: 'nice medium radius blue button'%></p>
   </div>
 <% end %>
