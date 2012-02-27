@@ -12,18 +12,18 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><p>
-    <%= f.text_field :name, placeholder: 'Enter user\'s name', class: 'input-text' %></p>
+    <%= f.label :name %>
+    <%= f.text_field :name, placeholder: 'Enter user\'s name', class: 'input-text' %>
   </div>
   <div class="field">
-    <%= f.label :email %><p>
-    <%= f.text_field :email, placeholder: 'User\'s email address', class: 'input-text' %></p>
+    <%= f.label :email %>
+    <%= f.text_field :email, placeholder: 'User\'s email address', class: 'input-text' %>
   </div>
   <div class="field">
-    <%= f.label :household %><p>
+    <%= f.label :household %>
     <%= f.collection_select(:household_id, Household.all, :id, :address, 
     	{:prompt => true}, 
-    	{"style" => "width:200px"})%></p>
+    	{"style" => "width:200px"})%>
   </div>
   <div class="actions"><p>
     <%= f.submit class: 'nice medium radius blue button'%></p>
