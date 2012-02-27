@@ -7,10 +7,19 @@ gem 'rails', '3.2.1'
 
 group :development, :test do
   gem 'sqlite3'
+  gem 'linecache19', '0.5.13', :path => "~/.rvm/gems/ruby-1.9.3-p0/gems/linecache19-0.5.13/"
+  gem 'ruby-debug-base19', '0.11.26', :path => "~/.rvm/gems/ruby-1.9.3-p0/gems/ruby-debug-base19-0.11.26/"
+  gem 'ruby-debug19', require: 'ruby-debug'
+  gem 'capybara_rails'
 end
 
 group :production do
   gem 'pg'
+end
+
+group :test do
+  gem 'capybara'
+  gem 'database_cleaner'
 end
 
 
@@ -42,3 +51,8 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
+
+group :test do
+  gem 'turn', '0.8.2', :require => false
+end
+

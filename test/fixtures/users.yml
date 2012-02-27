@@ -3,9 +3,9 @@
 one:
   name: MyString
   email: MyString
-  household: 
+  household: one
 
 two:
   name: MyString
   email: MyString
-  household: 
+  household: two
