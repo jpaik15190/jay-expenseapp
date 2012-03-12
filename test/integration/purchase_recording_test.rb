@@ -1,6 +1,11 @@
 require 'test_helper'
 
 class PurchaseRecordingTest < ActionDispatch::IntegrationTest
+  javascript
+  
+  setup do
+    login
+  end
   
   test "creating a new purchase" do
     # debugger;1

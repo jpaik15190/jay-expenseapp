@@ -21,6 +21,15 @@ require 'capybara/rails'
 DatabaseCleaner.strategy = :truncation
 
 class ActionDispatch::IntegrationTest
+
+  def login
+    User.create(email: 'jpaik@seas.upenn.edu', password: 'test1234')
+    visit new_user_session_path
+    fill_in 'Email', with: 'jpaik@seas.upenn.edu'
+    fill_in 'Password', with: 'test1234'
+    click_button 'Sign in'
+  end
+
   # Make the Capybara DSL available in all integration tests
   include Capybara::DSL
 
