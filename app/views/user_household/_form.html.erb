@@ -1,0 +1,21 @@
+<%= form_for(@household, html: {class: 'nice'}, url: household_path(current_user)) do |f| %>
+  <% if @household.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@household.errors.count, "error") %> prohibited this household from being saved:</h2>
+
+      <ul>
+      <% @household.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :address %>
+    <%= f.text_field :address, placeholder: 'Input address', class: 'input-text' %>
+  </div>
+  <div class="actions"><p>
+    <%= f.submit class: 'nice medium radius blue button'%></p>
+  </div>
+<% end %>

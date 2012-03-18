@@ -11,6 +11,10 @@ group :development, :test do
   gem 'capybara_rails'
 end
 
+group :development do
+  gem 'letter_opener'
+end
+
 group :production do
   gem 'pg'
 end
@@ -36,6 +40,8 @@ end
 gem 'jquery-rails'
 
 gem 'devise'
+
+gem 'acts-as-taggable-on'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

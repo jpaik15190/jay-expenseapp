@@ -1,0 +1,23 @@
+<h2>Your household</h2>
+
+<% if current_user.household %>
+
+  <h3>Recent purchases</h3>
+  <table>
+  <thead>
+    <tr>
+      <th>Description</th>
+      <th>Amount</th>
+      <th>User</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+    </thead>
+
+    <%= render recent_household_purchases %>
+  </table>
+<% else %>
+	<%= link_to "Make a Household", new_household_path(current_user) %>
+
+<% end %>

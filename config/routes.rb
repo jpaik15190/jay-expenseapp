@@ -1,9 +1,16 @@
 Expenseapp2::Application.routes.draw do
+  get "user_household/new"
+
   devise_for :users
 
   resources :purchases
-
-  resources :users
+  
+  # '/users/10/houshold'
+  resources :users do
+    member do
+      resource :household, controller: 'UserHousehold'
+    end
+  end
 
   resources :households
 

@@ -2,7 +2,8 @@ class PurchasesController < ApplicationController
   # GET /purchases
   # GET /purchases.json
   def index
-    @purchases = Purchase.all
+    #@purchases = Purchase.all
+    @purchases = current_user.purchases
 
     respond_to do |format|
       format.html # index.html.erb
@@ -13,7 +14,8 @@ class PurchasesController < ApplicationController
   # GET /purchases/1
   # GET /purchases/1.json
   def show
-    @purchase = Purchase.find(params[:id])
+    #@purchase = Purchase.find(params[:id])
+    @purchase = current_user.purchases.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -24,7 +26,8 @@ class PurchasesController < ApplicationController
   # GET /purchases/new
   # GET /purchases/new.json
   def new
-    @purchase = Purchase.new
+    #@purchase = Purchase.new
+    @purchase = current_user.purchases.build
 
     respond_to do |format|
       format.html # new.html.erb
@@ -34,16 +37,17 @@ class PurchasesController < ApplicationController
 
   # GET /purchases/1/edit
   def edit
-    @purchase = Purchase.find(params[:id])
+    @purchase = current_user.purchases.find(params[:id])
   end
 
   # POST /purchases
   # POST /purchases.json
   def create
-    @purchase = Purchase.new(params[:purchase])
+    @purchase = current_user.purchases.build(params[:purchase])
 
     respond_to do |format|
       if @purchase.save
+        Notifications.new_purchase(@purchase).deliver
         format.html { redirect_to @purchase, notice: 'Purchase was successfully created.' }
         format.json { render json: @purchase, status: :created, location: @purchase }
       else
@@ -56,7 +60,7 @@ class PurchasesController < ApplicationController
   # PUT /purchases/1
   # PUT /purchases/1.json
   def update
-    @purchase = Purchase.find(params[:id])
+    @purchase = current_user.purchases.find(params[:id])
 
     respond_to do |format|
       if @purchase.update_attributes(params[:purchase])

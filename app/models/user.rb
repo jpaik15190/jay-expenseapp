@@ -11,4 +11,9 @@ class User < ActiveRecord::Base
   validates :name, :uniqueness => true
   validates :email, :presence => true, :uniqueness => true, :format => { :with => /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i }
   #validates :household
+  
+  def recent_household_purchases
+    household.purchases.recent
+  end
+  
 end

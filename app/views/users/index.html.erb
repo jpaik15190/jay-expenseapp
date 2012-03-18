@@ -42,14 +42,7 @@
 		</div>
 
 		<div class="row">
-			<div class="two columns">
-				<dl class="nice tabs vertical hide-on-phones">
-					<dd><a href="/purchases">Purchases</a></dd>
-					<dd><a href="/users" class="active">Users</a></dd>
-					<dd><a href="/households">Households</a></dd>
-				</dl>
-			</div>
-			<div class="six columns">
+			<div class="eight columns">
 
 
 <p><h4>Users</h4></p>
@@ -57,7 +50,6 @@
 <table>
 <thead>
   <tr>
-    <th></th>
     <th>Name</th>
     <th>Email</th>
     <th>Household</th>
@@ -70,10 +62,10 @@
 <tbody>
 <% @users.each do |user| %>
   <tr>
-  	<td><%= check_box_tag(user) %></td>
+  	<!-- <td><%= check_box_tag(user) %></td> -->
     <td><%= user.name %></td>
     <td><%= user.email %></td>
-    <td><%= link_to user.household, user.household %></td>
+    <td><%= link_to user.household.address, user.household %></td>
     <td><%= link_to 'Show', user %></td>
     <td><%= link_to 'Edit', edit_user_path(user) %></td>
     <td><%= link_to 'Destroy', user, confirm: 'Are you sure?', method: :delete %></td>
@@ -87,7 +79,7 @@
 <%= link_to 'New User', new_user_path, class: 'nice small radius white button' %>
 
 			</div>
-			
+			<!--
 			<div class="four columns">
 				<p><h4>Notifications</h4></p>
 				<%= radio_button_tag(:notify, "Yes") %>
@@ -95,6 +87,7 @@
 				<%= radio_button_tag(:notify, "No") %>
 				<%= label_tag(:notify_no, "No") %>
 			</div>
+			-->
 		</div>
 		</div>
 
