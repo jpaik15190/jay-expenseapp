@@ -1,0 +1,18 @@
+--- 
+cursor_positions: 
+  - :path: Gemfile
+    :cursor_offset: 0
+    :timestamp: 2012-03-18 01:29:51 -04:00
+  - :path: app/controllers/purchases_controller.rb
+    :cursor_offset: 0
+    :timestamp: 2012-03-18 01:28:45 -04:00
+  - :path: app/views/households/index.html.erb
+    :cursor_offset: 0
+    :timestamp: 2012-03-18 01:09:17 -04:00
+  - :path: app/controllers/households_controller.rb
+    :cursor_offset: 0
+    :timestamp: 2012-02-13 03:45:49 -05:00
+  - :path: app/views/devise/_links.erb
+    :cursor_offset: 0
+    :timestamp: 2012-03-12 11:20:49 -04:00
+files_to_retain: 0
