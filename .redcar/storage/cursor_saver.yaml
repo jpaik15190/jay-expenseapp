@@ -1,8 +1,5 @@
 --- 
 cursor_positions: 
-  - :path: Gemfile
-    :cursor_offset: 0
-    :timestamp: 2012-03-18 01:29:51 -04:00
   - :path: app/controllers/purchases_controller.rb
     :cursor_offset: 0
     :timestamp: 2012-03-18 01:28:45 -04:00
@@ -15,4 +12,43 @@ cursor_positions:
   - :path: app/views/devise/_links.erb
     :cursor_offset: 0
     :timestamp: 2012-03-12 11:20:49 -04:00
+  - :path: app/controllers/application_controller.rb
+    :cursor_offset: 116
+    :timestamp: 2012-03-24 19:56:59 -04:00
+  - :path: config/environments/production.rb
+    :cursor_offset: 369
+    :timestamp: 2012-03-24 20:10:04 -04:00
+  - :path: config/environments/development.rb
+    :cursor_offset: 0
+    :timestamp: 2012-03-18 01:30:44 -04:00
+  - :path: Gemfile
+    :cursor_offset: 794
+    :timestamp: 2012-03-24 20:17:18 -04:00
+  - :path: config/newrelic.yml
+    :cursor_offset: 272
+    :timestamp: 2012-03-24 20:19:08 -04:00
+  - :path: app/mailers/notifications.rb
+    :cursor_offset: 98
+    :timestamp: 2012-03-24 20:22:50 -04:00
+  - :path: app/views/notifications/new_purchase.text.erb
+    :cursor_offset: 79
+    :timestamp: 2012-03-18 01:31:50 -04:00
+  - :path: app/assets/javascripts/purchases.js.coffee
+    :cursor_offset: 0
+    :timestamp: 2012-02-13 03:46:20 -05:00
+  - :path: app/assets/javascripts/jquery.js
+    :cursor_offset: 0
+    :timestamp: 2012-04-01 21:43:25 -04:00
+  - :path: config/routes.rb
+    :cursor_offset: 0
+    :timestamp: 2012-03-14 13:51:38 -04:00
+  - :path: config/environment.rb
+    :cursor_offset: 0
+    :timestamp: 2012-02-20 07:01:12 -05:00
+  - :path: config/application.rb
+    :cursor_offset: 0
+    :timestamp: 2012-03-12 02:22:28 -04:00
+  - :path: app/views/purchases/index.html.erb
+    :cursor_offset: 2554
+    :timestamp: 2012-03-18 01:09:31 -04:00
 files_to_retain: 0

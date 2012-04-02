@@ -4,6 +4,7 @@
   <title>Expense App</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
+  <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -19,14 +20,24 @@
 		    <%= yield %>
 		  </div>
 		  <div class="four columns">
-			<%= render 'household' %>
+			  <%= render 'household' %>
 		  </div>
 		</div>
+    
 	<% else %>
 	  <%= yield %>
+	  <br /><br />
+      <button class='nice small radius blue button'>About</button>
+      <div class="aabout" style="display: none">Expense Tracker is a useful and convenient solution to managing your day-to-day expenses.<br />
+      Developed for CIS 196: Ruby on Rails Web Development. <br />
+      Jay Paik</div>
 	<% end %>
 	
 </div>
+
+  <!-- Included JS Files -->
+	<script src="/assets/foundation.js"></script>
+	<script src="/assets/app.js"></script>
 
 </body>
 </html>

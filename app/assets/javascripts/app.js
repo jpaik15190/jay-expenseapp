@@ -5,7 +5,13 @@ $(document).ready(function () {
 
 	/* TABS --------------------------------- */
 	/* Remove if you don't need :) */
-
+    
+    $("button").toggle(function() {
+      $(".aabout").fadeIn('slow');
+    }, function() {
+      $(".aabout").fadeOut('slow');
+    });
+    
 	function activateTab($tab) {
 		var $activeTab = $tab.closest('dl').find('a.active'),
 				contentLocation = $tab.attr("href") + 'Tab';

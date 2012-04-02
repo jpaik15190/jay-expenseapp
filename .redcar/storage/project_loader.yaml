@@ -1,3 +1,9 @@
 --- 
-open_files: []
-
+open_files: 
+  - app/controllers/application_controller.rb
+  - config/environments/production.rb
+  - config/environments/development.rb
+  - Gemfile
+  - config/newrelic.yml
+  - app/mailers/notifications.rb
+  - app/views/notifications/new_purchase.text.erb
