@@ -11,3 +11,11 @@
  *= require_self
  *= require_tree .
 */
+
+a.logo { 
+	font-size: 30px;
+	line-height: 30px;
+	display: block;
+	float: left;
+	font-weight: bold;
+}

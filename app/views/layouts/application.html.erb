@@ -2,19 +2,57 @@
 <html>
 <head>
   <title>Expense App</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= stylesheet_link_tag "application", :media => "all" %>
+  
+  <!--<link rel="stylesheet" type="text/css" href="/assets/foundation.css" />-->
+  <!--<link rel="stylesheet" href="/assets/reveal.css" />-->
   <%= javascript_include_tag "application" %>
-  <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+  <!--<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>-->
+  
   <%= csrf_meta_tags %>
+  <!-- Included JS Files -->
+  <!--<script src="/assets/foundation.js"></script>-->
+  <!--<script src="/assets/app.js"></script>-->
+  <!--<script type="text/javascript" src="/assets/jquery.reveal.js"></script>-->
+
+  
+
 </head>
-<body>
+<body style="background-color: #EDEDED">
+
+
+
+<div class='panel' style = "height: 50px" >
+	<div class="container">
+		<a href="http://jay-expenses.herokuapp.com/" class="logo">Expense Tracker</a>
+		<% if user_signed_in? %>
+			<%= link_to 'Logout', destroy_user_session_path, class: 'nice radius small red button right', method: :delete %>
+		<% end %>
+		<a href="#" data-reveal-id="myModal" data-closeonbackgroundclick="true" class="nice radius small black button right">About</a>
+	</div>
+</div>
+
 
 <div class="container">
-	<p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+
+
+
+	
+	<% if notice %>
+	<div class='alert-box success'>
+		<%= notice %>
+		<a href="" class="close">&times;</a>
+	</div>
+	<% end %>
+
+	<% if alert %>
+    <div class='alert-box error'>
+    	<%= alert %>
+    	<a href="" class="close">&times;</a>
+    </div>
+    <% end %>
 
 	<% if user_signed_in? %>
-		<%= link_to 'Logout', destroy_user_session_path, method: :delete %>
 		<div class="row">
 		  <div class="eight columns">
 		    <%= yield %>
@@ -25,19 +63,49 @@
 		</div>
     
 	<% else %>
-	  <%= yield %>
-	  <br /><br />
-      <button class='nice small radius blue button'>About</button>
-      <div class="aabout" style="display: none">Expense Tracker is a useful and convenient solution to managing your day-to-day expenses.<br />
-      Developed for CIS 196: Ruby on Rails Web Development. <br />
-      Jay Paik</div>
+		<div class='row'>
+			<div class='six columns centered'>
+				<div style="width: 260px;
+					margin: auto;
+					padding: 20px" 
+					class='panel'>
+				<%= yield %>
+				</div>
+			</div>
+	    </div>
 	<% end %>
-	
 </div>
 
-  <!-- Included JS Files -->
-	<script src="/assets/foundation.js"></script>
-	<script src="/assets/app.js"></script>
+
+
+<div id="myModal" class="reveal-modal">
+	<h2>About</h2>
+    <h6>
+    	Expense Tracker is a useful and convenient solution to managing your day-to-day expenses. Developed for CIS 196: Ruby on Rails Web Development, Spring 2012.
+    </h6>
+    <br /><br />
+    <div>
+    	<h3>Frameworks</h3>
+     	<div class='panel' style="width: 60px; height: 110px; padding-top: 10px; padding-bottom: 5px; margin-right: 10px; float: left">
+     		<center>
+	     		<a href="http://rubyonrails.org/" target="_blank">
+	     			<img src="/assets/rails.png"></img><br/>
+	     			Ruby on Rails
+	     		</a>
+     		</center>
+        </div>
+     	<div class='panel' style="width: 60px; height: 110px; padding-top: 10px; padding-bottom: 5px; margin-right: 10px; float: left">
+     		<center>
+	     		<a href="http://foundation.zurb.com/" target="_blank">
+	     			<img src="/assets/foundation-yeti.png"></img><br/>
+	     			Foundation
+	     		</a>
+	     	</center>
+     	</div>
+    </div>
+     
+    <a class="close-reveal-modal">&#215;</a>
+</div>
 
 </body>
 </html>
