@@ -3,10 +3,10 @@
 <table>
 <thead>
   <tr>
-    <th>Address</th>
+    <th>Address</th><!--
     <th></th>
     <th></th>
-    <th></th>
+    <th></th>-->
   </tr>
 <thead>
 <tbody>
@@ -14,9 +14,11 @@
   <tr>
     <!-- <td><%= check_box_tag(household) %></td> -->
     <td><%= household.address %></td>
+    <!--
     <td><%= link_to 'Show', household %></td>
     <td><%= link_to 'Edit', edit_household_path(household) %></td>
     <td><%= link_to 'Destroy', household, confirm: 'Are you sure?', method: :delete %></td>
+	-->
   </tr>
 <% end %>
 </tbody>
@@ -24,5 +26,5 @@
 
 <br />
 
-<%= link_to 'New Household', new_household_path, class: 'nice small radius white button' %>
+<!--<%= link_to 'New Household', new_household_path, class: 'nice small radius white button' %>-->
 

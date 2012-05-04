@@ -39,13 +39,14 @@ $(function () {
 			remove();
 		}
 	}
-
+	/*
 	$("#new_purchase").live('submit', function (e) {
 		e.preventDefault();
 		var body = $(this).serialize();
 		$.post(this.action, body, postHandler);
 	});
-
+	*/
+	
 
 
 

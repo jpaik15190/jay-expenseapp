@@ -49,9 +49,11 @@ class PurchasesController < ApplicationController
 
     respond_to do |format|
       if @purchase.save
-        Notifications.new_purchase(@purchase).deliver
-        format.html { redirect_to @purchase, notice: 'Purchase was successfully created.' }
+        #Notifications.new_purchase(@purchase).deliver
+        #format.html { redirect_to @purchase, notice: 'Purchase was successfully created.' }
         format.json { render json: @purchase, status: :created, location: @purchase }
+        format.html { redirect_to purchases_url }
+        format.json { head :no_content }
       else
         format.html { render action: "new" }
         format.json { render json: @purchase.errors, status: :unprocessable_entity }

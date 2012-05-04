@@ -10,7 +10,7 @@ class PurchaseRecordingTest < ActionDispatch::IntegrationTest
   test "creating a new purchase" do
     # debugger;1
     visit purchases_path
-    click_link "New Purchase"
+    click_link 'new-purchase-link'
     fill_in "Description", with: "Spam"
     click_button "Create Purchase"
     
