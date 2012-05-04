@@ -19,12 +19,14 @@
     <%= f.label :amount %>
     <%= f.text_field :amount, placeholder: 'Enter a numerical value', class: 'input-text' %>
   </div>
+  <!--
   <div class="field">
     <%= f.label :user %>
     <%= f.collection_select(:user_id, User.all, :id, :name, 
     	{:prompt => true}, 
     	{"style" => "width:200px"})%>
   </div>
+  -->
   <div class="actions"><p>
     <%= f.submit class: 'nice medium radius blue button'%></p>
   </div>

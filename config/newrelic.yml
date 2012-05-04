@@ -1,5 +1,5 @@
 ---
- <%= ENV["RACK_ENV"] %>:
+<%= ENV["RACK_ENV"] || 'production' %>:
    error_collector:
      capture_source: true
      enabled: true
@@ -17,3 +17,6 @@
      transaction_threshold: apdex_f
    capture_params: false
    log_level: info
+
+development:
+  developer_mode: true

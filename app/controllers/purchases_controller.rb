@@ -17,10 +17,12 @@ class PurchasesController < ApplicationController
     #@purchase = Purchase.find(params[:id])
     @purchase = current_user.purchases.find(params[:id])
 
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @purchase }
-    end
+    #respond_to do |format|
+    #  format.html # show.html.erb
+    #  format.json { render json: @purchase }
+    #end
+
+    render @purchase if request.xhr?
   end
 
   # GET /purchases/new

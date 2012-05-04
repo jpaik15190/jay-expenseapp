@@ -1,122 +1,41 @@
-<!DOCTYPE html>
+<h2>Purchases</h2>
 
-<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
-<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
-<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
-<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!--> <html lang="en"> <!--<![endif]-->
-<head>
-	<meta charset="utf-8" />
+<% if @purchases.length > 0 %>
 
-	<!-- Set the viewport width to device width for mobile -->
-	<meta name="viewport" content="width=device-width" />
+	<table class="purchases">
+	<thead>
+	  <tr>
+	    <th>Description</th>
+	    <th>Amount</th>
+	    <!--<th>User</th>-->
+	    <th></th>
+	    <th></th>
+	    <th></th>
+	  </tr>
+	</thead>
 
-	<title>Expense Tracker</title>
-  
-	<!-- Included CSS Files -->
-	<link rel="stylesheet" href="assets/foundation.css">
-	<link rel="stylesheet" href="assets/app.css">
+	<tbody>
+	<% @purchases.each do |purchase| %>
+	  <tr>
+	  	<!--<td><%= check_box_tag(purchase) %></td>-->
+	    <td><%= purchase.description %></td>
+	    <td><%= number_to_currency purchase.amount %></td>
+	    <!--<td><%= link_to purchase.user.name, purchase.user %></td>-->
+	    <td><%= link_to 'Show', purchase %></td>
+	    <td><%= link_to 'Edit', edit_purchase_path(purchase) %></td>
+	    <td><%= link_to 'Destroy', purchase, confirm: 'Are you sure?', method: :delete %></td>
+	    
+	  </tr>
+	<% end %>
+	</tbody>
+	</table>
 
-	<!--[if lt IE 9]>
-		<link rel="stylesheet" href="assets/ie.css">
-	<![endif]-->
+	<%= link_to 'New Purchase', new_purchase_path, class: 'nice small radius white button', id: 'new-purchase-link' %>
 
+<% else %>
+	<h5>
+		You currently do not have any recorded purchases. 
+		<%= link_to 'Make one now.', new_purchase_path, id: 'new-purchase-link' %>
+	</h5>
 
-	<!-- IE Fix for HTML5 Tags -->
-	<!--[if lt IE 9]>
-		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-	<![endif]-->
-
-</head>
-<body>
-
-	<!-- container -->
-	<div class="container">
-	<!--
-		<div class="row">
-			<div class="twelve columns">
-				<h1>Expense Tracker</h1>
-				<h4 class="subheader">Keep track of your spending!</h4>
-				<hr />
-			</div>
-		</div>
-	-->
-		<div class="row">
-			<!--
-			<div class="two columns">
-				<dl class="nice tabs vertical hide-on-phones">
-					<dd><a href="/purchases" class="active">Purchases</a></dd>
-					<dd><a href="/users">Users</a></dd>
-					<dd><a href="/households">Households</a></dd>
-				</dl>
-			</div>
-			-->
-			<div class="eight columns">
-			
-<p><h4>Purchases</h4></p>
-
-<table>
-<thead>
-  <tr>
-    <th>Description</th>
-    <th>Amount</th>
-    <th>User</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-</thead>
-
-<tbody>
-<% @purchases.each do |purchase| %>
-  <tr>
-  	<!--<td><%= check_box_tag(purchase) %></td>-->
-    <td><%= purchase.description %></td>
-    <td><%= purchase.amount %></td>
-    <td><%= link_to purchase.user.name, purchase.user %></td>
-    <td><%= link_to 'Show', purchase %></td>
-    <td><%= link_to 'Edit', edit_purchase_path(purchase) %></td>
-    <td><%= link_to 'Destroy', purchase, confirm: 'Are you sure?', method: :delete %></td>
-    
-  </tr>
 <% end %>
-</tbody>
-</table>
-
-<br />
-
-<%= link_to 'New Purchase', new_purchase_path, class: 'nice small radius white button' %>
-				
-			
-			</div>
-			<!--
-			<div class="four columns">
-				<p><h4>Notifications</h4></p>
-				<%= radio_button_tag(:notify, "Yes") %>
-				<%= label_tag(:notify_yes, "Yes") %>
-				<%= radio_button_tag(:notify, "No") %>
-				<%= label_tag(:notify_no, "No") %>
-			</div>
-			-->
-		</div>
-
-	</div>
-	<!-- container -->
-
-
-
-
-	<!-- Included JS Files -->
-	<script src="assets/foundation.js"></script>
-	<script src="assets/app.js"></script>
-
-</body>
-</html>
-
-
-
-
-
-
-
-

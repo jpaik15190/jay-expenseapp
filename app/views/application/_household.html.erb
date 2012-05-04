@@ -1,23 +1,33 @@
-<h2>Your household</h2>
+<div class="panel">
+<h2>Your Household</h2>
 
 <% if current_user.household %>
+  <% if recent_household_purchases.length > 0 %>
+    
+      <h4>Recent Purchases</h4>
+      <table class="purchases">
+      <thead>
+        <tr>
+          <th>Description</th>
+          <th>Amount</th>
+          <th>User</th>
 
-  <h3>Recent purchases</h3>
-  <table>
-  <thead>
-    <tr>
-      <th>Description</th>
-      <th>Amount</th>
-      <th>User</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-    </thead>
+        </tr>
+        </thead>
 
-    <%= render recent_household_purchases %>
-  </table>
+        <%= render recent_household_purchases %>
+      </table>
+  <% else %>
+    <h5>Your household has not had any purchases in the last two weeks.</h5>
+  <% end %>
+
+
+
 <% else %>
-	<%= link_to "Make a Household", new_household_path(current_user) %>
-
+  <h5>
+	  <%= link_to "Where do you live?", new_household_path(current_user) %>
+    <br />
+  </h5>
 <% end %>
+<br />
+</div>

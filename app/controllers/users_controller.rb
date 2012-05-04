@@ -1,4 +1,11 @@
 class UsersController < ApplicationController
+
+  before_filter :cross_user_edit_protection, only: [:edit, :update, :destroy]
+
+  def cross_user_edit_protection
+    @user = User.find(params[:id])
+    redirect_to edit_user_path(current_user) unless @user == current_user
+  end
   # GET /users
   # GET /users.json
   def index

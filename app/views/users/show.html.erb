@@ -10,7 +10,13 @@
 
 <p>
   <b>Household:</b>
-  <%= link_to @user.household.address, @user.household %>
+  
+  
+  <% if @user.household %>
+  		<%= @user.household.address %>
+		<!--<%= link_to @user.household.address, @user.household %>-->
+	<% else %>
+	<% end %>
 </p>
 
 

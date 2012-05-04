@@ -5,12 +5,13 @@
 
 <p>
   <b>Amount:</b>
-  <%= @purchase.amount %>
+  <%= number_to_currency @purchase.amount %>
 </p>
 
 <p>
   <b>User:</b>
-  <%= link_to @purchase.user.name, @purchase.user %>
+  <!--<%= link_to @purchase.user.name, @purchase.user %>-->
+  <%= @purchase.user.name %>
 </p>
 
 
