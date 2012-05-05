@@ -65,12 +65,16 @@
 
 	<% if user_signed_in? %>
 		<div class="row">
-		  <div class="seven columns">
-		    <%= yield %>
-		  </div>
-		  <div class="five columns">
-			  <%= render 'household' %>
-		  </div>
+			<div class="ten columns centered">
+				<div class="row">
+					<div class="six columns">
+					    <%= yield %>
+					</div>
+					<div class="six columns end">
+						<%= render 'household' %>
+					</div>
+				</div>
+			</div>
 		</div>
     
 	<% else %>
